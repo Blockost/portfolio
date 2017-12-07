@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Pre-built Angular Material theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+mat-toolbar-row {
+    display: flex;
+    justify-content: space-between; 
+}
