@@ -10,13 +10,11 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 
 // Custom components
 import { AppComponent } from './app.component';
-import { SidenavLeftComponent } from './components/sidenav-left/sidenav-left.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidenavLeftComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

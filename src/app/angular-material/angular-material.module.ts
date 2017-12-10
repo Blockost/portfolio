@@ -13,13 +13,16 @@ import {
 
 @NgModule({
   imports: [
-    MatSidenavModule,
-  ],
-  exports: [
-    MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule
+  ],
+  exports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule
   ],
   declarations: []
 })

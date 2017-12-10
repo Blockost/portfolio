@@ -12,3 +12,12 @@ mat-toolbar-row {
     display: flex;
     justify-content: space-between; 
 }
+
+mat-sidenav {
+    display: flex;
+    padding: 1%;
+}
+
+mat-sidenav-content {
+    padding: 2.5%;
+}
