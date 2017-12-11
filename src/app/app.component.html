@@ -19,13 +19,13 @@
 
 
   <mat-sidenav #sidenavLeft position="start" mode="over">
-    {{message}}  
+    <a routerLink="/projects">Projects</a>
   </mat-sidenav>
 
 
   <mat-sidenav-content>
     <!-- Main app content -->
-    Hello this is the main content
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 
 

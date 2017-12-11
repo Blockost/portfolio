@@ -1,0 +1,12 @@
+app-project-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 !important;
+}
+
+.custom-card {
+    width: 15%;
+    margin: 0 !important;
+}
