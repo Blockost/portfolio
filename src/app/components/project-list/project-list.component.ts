@@ -22,7 +22,7 @@ export class ProjectListComponent implements OnInit {
     this.projectService
       .getProjects()
       .then(projects => this.projects = projects)
-      .catch(this.handleError);
+      .catch(this.handleError.bind(this));
   }
 
   handleError(error: any) {

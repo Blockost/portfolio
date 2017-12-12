@@ -1,25 +1,26 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="custom-toolbar">
   <mat-toolbar-row>
     <span>
-      <button mat-icon-button (click)="sidenavLeft.toggle()">
+      <button mat-icon-button (click)="sidenavLeft.toggle()" matTooltip="Menu" matTooltipPosition="below">
         <mat-icon>menu</mat-icon>
       </button>
     </span>
     <span>{{title}}</span>
     <span>
-      <button mat-icon-button>
-        <mat-icon>settings</mat-icon>    
+      <button mat-icon-button matTooltip="Settings" matTooltipPosition="below">
+        <mat-icon>settings</mat-icon>
       </button>
     </span>
   </mat-toolbar-row>
 </mat-toolbar>
 
 <!-- Main app container -->
-<mat-sidenav-container>
+<mat-sidenav-container class="custom-sidenav-container">
 
 
-  <mat-sidenav #sidenavLeft position="start" mode="over">
-    <a routerLink="/projects">Projects</a>
+  <mat-sidenav #sidenavLeft position="start" mode="side">
+      <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/projects">Projects</a>
   </mat-sidenav>
 
 

@@ -25,7 +25,8 @@ export class ProjectService {
         repo.name,
         repo.description,
         null,
-        repo.html_url));
+        repo.html_url,
+        '/assets/img/toto.jpg'));
   }
 
   private handleError(error: any): Promise<any> {
