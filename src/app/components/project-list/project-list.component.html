@@ -12,8 +12,12 @@
       {{project.description}}
     </mat-card-content>
     <mat-card-actions class="custom-card-actions">
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
+      <div *ngIf="project.githubUrl">
+        <a mat-button [href]="project.githubUrl" target="_blank">GITHUB</a>
+      </div>
+      <div *ngIf="project.websiteUrl">
+        <a mat-button [href]="project.websiteUrl" target="_blank">DEMO</a>
+      </div>
     </mat-card-actions>
   </mat-card>
 </div>

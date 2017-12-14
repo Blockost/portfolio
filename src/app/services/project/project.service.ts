@@ -24,7 +24,7 @@ export class ProjectService {
       new Project(
         repo.name,
         repo.description,
-        null,
+        repo.homepage,
         repo.html_url,
         '/assets/img/fake.jpg'));
   }
