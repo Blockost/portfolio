@@ -18,7 +18,7 @@ export class UrlBuilderService {
   build(baseUrl: string,
     resourceUrl: string,
     params: Map<String, String>,
-    useHttps: boolean) {
+    useHttps = true) {
 
     baseUrl = this.removeSlashes(baseUrl);
     resourceUrl = this.removeSlashes(resourceUrl);

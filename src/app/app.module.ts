@@ -17,6 +17,7 @@ import { RoutingModule } from './routing/routing.module';
 import { GithubService } from './services/github/github.service';
 import { UrlBuilderService } from './services/url-builder/url-builder.service';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProjectFakerService } from './services/faker/project/project-faker.service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     AngularMaterialModule,
     RoutingModule
   ],
-  providers: [ProjectService, GithubService, UrlBuilderService],
+  providers: [ProjectService, GithubService, UrlBuilderService, ProjectFakerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

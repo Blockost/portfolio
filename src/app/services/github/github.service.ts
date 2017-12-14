@@ -17,7 +17,7 @@ export class GithubService {
   ]);
   private readonly HEADERS = new Headers({
     'Content-Type': 'application/json',
-    'Authorization': 'token dfc27f36bafdcda59e3c6de9503e6463c16f17cf'
+    'Authorization': 'token __TOKEN_HERE__'
   });
 
   constructor(private http: Http,
@@ -33,9 +33,7 @@ export class GithubService {
     const GITHUB_API_REPO_FULL_URL = this.urlBuilder.build(
       this.GITHUB_API_BASE_URL,
       this.GITHUB_API_REPO_URL,
-      this.GITHUB_API_REPO_PARAMS,
-      true
-    );
+      this.GITHUB_API_REPO_PARAMS);
 
     return this.http
       .get(GITHUB_API_REPO_FULL_URL, new RequestOptions({ headers: this.HEADERS }))
