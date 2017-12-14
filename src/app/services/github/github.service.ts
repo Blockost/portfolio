@@ -17,7 +17,7 @@ export class GithubService {
   ]);
   private readonly HEADERS = new Headers({
     'Content-Type': 'application/json',
-    'Authorization': 'token b7e986358b364668d06545c85cf588cb09c6d814'
+    'Authorization': 'token __TOKEN_HERE__'
   });
 
   constructor(private http: Http,
