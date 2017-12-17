@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { log } from 'util';
 
 @Injectable()
 export class UrlBuilderService {
@@ -17,7 +16,7 @@ export class UrlBuilderService {
    */
   build(baseUrl: string,
     resourceUrl: string,
-    params: Map<String, String>,
+    params: Map<string, string>,
     useHttps = true) {
 
     baseUrl = this.removeSlashes(baseUrl);

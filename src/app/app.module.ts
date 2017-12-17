@@ -16,8 +16,10 @@ import { ProjectService } from './services/project/project.service';
 import { RoutingModule } from './routing/routing.module';
 import { GithubService } from './services/github/github.service';
 import { UrlBuilderService } from './services/url-builder/url-builder.service';
-import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProjectFakerService } from './services/faker/project/project-faker.service';
+import { LandingComponent } from './landing/landing.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { ProjectFakerService } from './services/faker/project/project-faker.serv
     AppComponent,
     ProjectListComponent,
     PageNotFoundComponent,
-    HomepageComponent
+    LandingComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

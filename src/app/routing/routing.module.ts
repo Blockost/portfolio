@@ -4,13 +4,13 @@ import { RouterModule, Route } from '@angular/router';
 // Import components
 import { ProjectListComponent } from '../components/project-list/project-list.component';
 import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
-import { HomepageComponent } from '../components/homepage/homepage.component';
+import { LandingComponent } from '../landing/landing.component';
 
 // Add routes to components here (order matters) !
 const ROUTES = [
   {
-    path: 'home',
-    component: HomepageComponent
+    path: 'landing',
+    component: LandingComponent
   },
   {
     path: 'projects',
@@ -22,7 +22,7 @@ const ROUTES = [
   },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/landing',
     pathMatch: 'full'
   },
   {

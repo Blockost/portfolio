@@ -10,7 +10,7 @@ export class ProjectFakerService implements Faker {
     return new Project(
       'PROJECT_MOCK',
       'Mock project for app showcase',
-      null, null, '/assets/img/fake.jpg');
+      '', '', '/assets/img/fake.jpg');
   }
 
   fakeMassively(n: number): Project[] {
