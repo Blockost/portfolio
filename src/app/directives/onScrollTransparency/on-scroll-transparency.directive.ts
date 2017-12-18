@@ -29,18 +29,20 @@ export class OnScrollTransparencyDirective implements OnInit {
   }
 
   private applyTransparency(el: ElementRef) {
-    if (document.documentElement.scrollTop >=this.scrollDistance) {
+    if (document.documentElement.scrollTop >= this.scrollDistance) {
       this.renderer.removeClass(this.el.nativeElement, 'navbar-transparent');
     } else {
       this.renderer.addClass(this.el.nativeElement, 'navbar-transparent');
     }
   }
 
-  // Returns a function, that, as long as it continues to be invoked, will not
-  // be triggered. The function will be called after it stops being called for
-  // N milliseconds. If `immediate` is passed, trigger the function on the
-  // leading edge, instead of the trailing.
-
+  /**
+   * Returns a function, that, as long as it continues to be invoked, will not be triggered.
+   * The function will be called after it stops being called for N milliseconds.
+   * @param fn the function to be called
+   * @param wait time to wait before invoking the function (in ms)
+   * @param immediate trigger the function on the leading edge. Otherwise, on the trailing edge.
+   */
   private debounce(fn: Function, wait: number, immediate: boolean) {
     let timeout: any;
     return () => {
