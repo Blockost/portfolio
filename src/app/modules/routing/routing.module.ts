@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 
 // Import components
-import { ProjectListComponent } from '../components/project-list/project-list.component';
-import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
-import { LandingComponent } from '../landing/landing.component';
+import { ProjectListComponent } from '../../components/project-list/project-list.component';
+import { PageNotFoundComponent } from '../../pages/page-not-found/page-not-found.component';
+import { LandingComponent } from '../../pages/landing/landing.component';
+import { HomeComponent } from '../../pages/home/home.component';
 
 // Add routes to components here (order matters) !
 const ROUTES = [
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'landing',
     component: LandingComponent
