@@ -22,6 +22,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OnScrollTransparencyDirective } from './directives/onScrollTransparency/on-scroll-transparency.directive';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { OnScrollTransparencyDirective } from './directives/onScrollTransparency
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    OnScrollTransparencyDirective
+    OnScrollTransparencyDirective,
+    ProjectsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
