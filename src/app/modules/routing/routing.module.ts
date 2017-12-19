@@ -32,7 +32,7 @@ const ROUTES = [
   },
   {
     path: '',
-    redirectTo: '/landing',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
