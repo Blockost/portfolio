@@ -10,8 +10,14 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "engines": {
+    "node": "^8.9.1",
+    "npm": "^5.5.1"
+
+  },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^1.5.5",
     "@angular/animations": "^5.0.5",
     "@angular/cdk": "^5.0.0-rc.2",
     "@angular/common": "^5.0.0",
