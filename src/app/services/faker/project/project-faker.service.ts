@@ -5,12 +5,24 @@ import { Project } from '../../../models/project';
 
 @Injectable()
 export class ProjectFakerService implements Faker {
+  private readonly PROJECT_NAME = 'PROJECT_MOCK';
+  private readonly PROJECT_DESC = 'Mock project for app showcase';
+  private readonly PROJECT_URL = '';
+  private readonly PROJECT_GITHUB_URL = '';
+  private readonly PROJECT_IMG = '/assets/img/fake.jpg';
+  private readonly PROJECT_TOPICS = ['default'];
+
+  constructor() { }
 
   fake(): Project {
     return new Project(
-      'PROJECT_MOCK',
-      'Mock project for app showcase',
-      '', '', '/assets/img/fake.jpg');
+      this.PROJECT_NAME,
+      this.PROJECT_DESC,
+      this.PROJECT_URL,
+      this.PROJECT_GITHUB_URL,
+      this.PROJECT_IMG,
+      this.PROJECT_TOPICS
+    );
   }
 
   fakeMassively(n: number): Project[] {
@@ -21,7 +33,5 @@ export class ProjectFakerService implements Faker {
 
     return projects;
   }
-
-  constructor() { }
 
 }

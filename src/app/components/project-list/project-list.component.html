@@ -2,7 +2,12 @@
   <mat-card *ngFor="let project of projects" class="custom-card">
     <mat-card-header>
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title>{{project.name}}</mat-card-title>
+      <mat-card-title>
+        {{project.name}}
+        <span *ngFor="let topic of project.topics" class="label label-default">
+          {{topic}}
+        </span>
+      </mat-card-title>
       <mat-card-subtitle>I am the subtitle</mat-card-subtitle>
     </mat-card-header>
 
@@ -11,6 +16,7 @@
     <mat-card-content>
       {{project.description}}
     </mat-card-content>
+    
     <mat-card-actions class="custom-card-actions">
       <div *ngIf="project.githubUrl">
         <a mat-button [href]="project.githubUrl" target="_blank">GITHUB</a>

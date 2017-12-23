@@ -26,7 +26,8 @@ export class ProjectService {
         repo.description,
         repo.homepage,
         repo.html_url,
-        '/assets/img/fake.jpg'));
+        '/assets/img/fake.jpg',
+        repo.topics));
   }
 
   private handleError(error: any): Promise<any> {
