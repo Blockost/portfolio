@@ -4,9 +4,8 @@ node_js:
 email: true # if set to `false`: no email notifications
 install:
   - npm install
-  - npm install @angular/cli
 scripts: # test build (Continuous Integration)
-  - npm run build
+  #- npm run build
   #- npm run test
 cache: # Retrieve modules from cache and update when something changes
   directories:
