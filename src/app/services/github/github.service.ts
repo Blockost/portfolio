@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import '../../../../node_modules/rxjs/add/operator/toPromise';
 import { UrlBuilderService } from '../url-builder/url-builder.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class GithubService {
@@ -16,7 +17,7 @@ export class GithubService {
   ]);
   private readonly HEADERS = new Headers({
     'Content-Type': 'application/json',
-    'Authorization': 'token __TOKEN_HERE__'
+    'Authorization': `token ${environment.github_read_token}` // get TOKEN from env variables
   });
 
   constructor(private http: Http,
