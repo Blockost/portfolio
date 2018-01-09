@@ -5,9 +5,9 @@ import { argv } from 'yargs';
 require('dotenv').config({path: 'src/environments/.env'});
 
 // Is be passed to script like this:
-// `ts-node set-env.ts --environment=dev`
+// `ts-node set-env.ts --env=dev`
 // Get it from yargs's argv object
-const environment = argv.environment;
+const environment = argv.env;
 const isProd = environment === 'prod';
 
 const configFile = `./src/environments/environment.${environment}.ts`;
