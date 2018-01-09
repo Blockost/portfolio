@@ -7,6 +7,7 @@ import { Project } from '../../../models/project';
 export class ProjectFakerService implements Faker {
   private readonly PROJECT_NAME = 'PROJECT_MOCK';
   private readonly PROJECT_DESC = 'Mock project for app showcase';
+  private readonly PROJECT_LANG = 'Javascript';
   private readonly PROJECT_URL = '';
   private readonly PROJECT_GITHUB_URL = '';
   private readonly PROJECT_IMG = '/assets/img/fake.jpg';
@@ -18,6 +19,7 @@ export class ProjectFakerService implements Faker {
     return new Project(
       this.PROJECT_NAME,
       this.PROJECT_DESC,
+      this.PROJECT_LANG,
       this.PROJECT_URL,
       this.PROJECT_GITHUB_URL,
       this.PROJECT_IMG,

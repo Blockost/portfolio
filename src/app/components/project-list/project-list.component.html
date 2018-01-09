@@ -2,6 +2,7 @@
   <mat-card *ngFor="let project of projects" class="custom-card">
     <mat-card-header>
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <!-- TODO: add programming language to project card content --> 
       <mat-card-title>
         {{project.name}}
         <span *ngFor="let topic of project.topics" class="label label-default">

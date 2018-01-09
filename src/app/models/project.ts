@@ -1,6 +1,7 @@
 export class Project {
     name: string;
     description: string;
+    language: string;
     websiteUrl: string;
     githubUrl: string;
     imgUrl: string;
@@ -9,6 +10,7 @@ export class Project {
     constructor(
         name: string,
         description: string,
+        language: string,
         websiteUrl: string,
         githubUrl: string,
         imgUrl: string,
@@ -16,6 +18,7 @@ export class Project {
 
         this.name = name;
         this.description = description;
+        this.language = language;
         this.websiteUrl = websiteUrl;
         this.githubUrl = githubUrl;
         this.imgUrl = imgUrl;

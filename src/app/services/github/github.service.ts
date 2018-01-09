@@ -16,6 +16,8 @@ export class GithubService {
     ['direction', 'asc']
   ]);
   private readonly HEADERS = new Headers({
+    // TODO: 2018-01-08 to be removed when topics are not in preview anymore
+    'Accept': 'application/vnd.github.mercy-preview+json',
     'Content-Type': 'application/json',
     'Authorization': `token ${environment.github_read_token}` // get TOKEN from env variables
   });
