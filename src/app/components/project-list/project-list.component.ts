@@ -11,7 +11,7 @@ import { ProjectFakerService } from '../../services/faker/project/project-faker.
 })
 export class ProjectListComponent implements OnInit {
 
-  projects: Project[];
+  projects: Project[] = [];
 
   constructor(private projectService: ProjectService,
     private projectFakerService: ProjectFakerService) { }
