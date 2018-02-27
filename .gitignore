@@ -41,5 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# .env config file
+# environment-specific config files
+environment.*.ts
 .env
