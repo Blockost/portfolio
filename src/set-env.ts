@@ -3,8 +3,8 @@ import { argv } from 'yargs';
 
 // Load dotenv module
 const dotenv = require('dotenv');
-// Path to .env file containing environment variables
-const envPath = 'src/environments/d.env';
+// Path to .env file (local only, not committed) containing environment variables
+const envPath = 'src/environments/.env';
 
 if (!existsSync(envPath)) {
     console.log(`${envPath} not found. Assuming environment variables are set in the system.`);

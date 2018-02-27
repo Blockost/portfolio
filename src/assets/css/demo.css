@@ -754,10 +754,6 @@ pre.prettyprint {
     box-shadow: 0 -3px 8px rgba(0, 0, 0, 0);
 }
 
-.presentation .section-images .card-image .image {
-    /*     border-radius: 6px; */
-}
-
 @media (max-width: 1200px) {
     .presentation .section-images .image img {
         width: 100%;
