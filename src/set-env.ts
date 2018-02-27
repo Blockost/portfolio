@@ -1,25 +1,25 @@
 import { writeFile, existsSync } from 'fs';
 import { argv } from 'yargs';
 
+// Load dotenv module
 const dotenv = require('dotenv');
-const envPath = 'src/environments/.env';
+// Path to .env file containing environment variables
+const envPath = 'src/environments/d.env';
 
 if (!existsSync(envPath)) {
-    console.log(`${envPath} not found. You must have an environment file.`);
-    process.exit(0);
+    console.log(`${envPath} not found. Assuming environment variables are set in the system.`);
+} else {
+    // Load env variables from the .env file into process.env object
+    dotenv.config({ path: envPath });
 }
-
-// Load env variables in the .env file into process.env object
-dotenv.config({path: envPath});
 
 if (argv.env === undefined) {
     console.log('You must specify an environment using --env={YOUR_ENV}');
     process.exit(0);
 }
 
-// Is be passed to script like this:
-// `ts-node set-env.ts --env=dev`
 // Get it from yargs's argv object
+// Passed liked this: `ts-node set-env.ts --env=dev`
 const environment = argv.env;
 const isProd = environment === 'prod';
 
