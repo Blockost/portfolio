@@ -5,6 +5,7 @@ email: true # if set to `false`: no email notifications
 install:
   - npm install
 scripts: # test build (Continuous Integration)
+  echo "npm test temporarily disabled"
   #- npm run build
   #- npm run test
 cache: # Retrieve modules from cache and update when something changes
