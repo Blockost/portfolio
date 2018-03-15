@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { Faker } from '../faker';
+import { IFaker } from '../Faker';
 import { Project } from '../../../models/project';
 
 @Injectable()
-export class ProjectFakerService implements Faker {
+export class ProjectFakerService implements IFaker {
   private readonly PROJECT_NAME = 'PROJECT_MOCK';
   private readonly PROJECT_DESC = 'Mock project for app showcase';
   private readonly PROJECT_LANG = 'Javascript';
