@@ -20,24 +20,14 @@ export class ProjectService {
   }
 
   private toProjects(githubRepoCollections: any[]): Project[] {
-    return githubRepoCollections.map((repo: any) =>
-      new Project(
-        repo.name,
-        repo.description,
-        repo.language,
-        repo.homepage,
-        repo.html_url,
-        '/assets/img/fake.jpg',
-        repo.topics));
+    return githubRepoCollections
+      .filter((repo: any) => repo.fork === false)
+      .map((repo: any) => Project.fromGithub(repo));
   }
 
   private handleError(error: any): Promise<any> {
     console.error(error);
     return Promise.reject(error.message || error);
   }
-
-
-
-
 
 }

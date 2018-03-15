@@ -12,9 +12,13 @@ export class GithubService {
   private readonly GITHUB_API_REPO_PARAMS = new Map<string, string>([
     ['visibilty', 'public'],
     ['affiliation', 'owner'],
-    ['sort', 'full_name'],
-    ['direction', 'asc']
+    ['sort', 'updated'],
+    ['direction', 'desc']
   ]);
+  private readonly GITHUB_API_REPO_FULL_URL = this.urlBuilder.build(
+    this.GITHUB_API_BASE_URL,
+    this.GITHUB_API_REPO_URL,
+    this.GITHUB_API_REPO_PARAMS);
   private readonly HEADERS = new Headers({
     // TODO: 2018-01-08 to be removed when topics are not in preview anymore
     'Accept': 'application/vnd.github.mercy-preview+json',
@@ -31,14 +35,8 @@ export class GithubService {
   }
 
   getRepos(): Promise<any[]> {
-
-    const GITHUB_API_REPO_FULL_URL = this.urlBuilder.build(
-      this.GITHUB_API_BASE_URL,
-      this.GITHUB_API_REPO_URL,
-      this.GITHUB_API_REPO_PARAMS);
-
     return this.http
-      .get(GITHUB_API_REPO_FULL_URL, new RequestOptions({ headers: this.HEADERS }))
+      .get(this.GITHUB_API_REPO_FULL_URL, { headers: this.HEADERS })
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);

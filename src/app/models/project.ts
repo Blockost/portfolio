@@ -7,6 +7,17 @@ export class Project {
     imgUrl: string;
     topics: string[];
 
+    static fromGithub(githubRepo: any): Project {
+        return new Project(
+            githubRepo.name,
+            githubRepo.description,
+            githubRepo.language,
+            githubRepo.homepage,
+            githubRepo.html_url,
+            '/assets/img/fake.jpg',
+            githubRepo.topics);
+    }
+
     constructor(
         name: string,
         description: string,
