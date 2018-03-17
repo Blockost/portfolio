@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IFaker } from '../Faker';
+import { IFaker } from '../faker';
 import { Project } from '../../../models/project';
 
 @Injectable()
