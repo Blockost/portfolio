@@ -29,5 +29,4 @@ export class ProjectService {
     console.error(error);
     return Promise.reject(error.message || error);
   }
-
 }

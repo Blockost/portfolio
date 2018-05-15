@@ -8,13 +8,17 @@ export class Project {
     topics: string[];
 
     static fromGithub(githubRepo: any): Project {
+
+        const thumbnail =
+            `https://github.com/Blockost/${githubRepo.name}/raw/master/thumbnail.jpg`;
+
         return new Project(
             githubRepo.name,
             githubRepo.description,
             githubRepo.language,
             githubRepo.homepage,
             githubRepo.html_url,
-            '/assets/img/fake.jpg',
+            thumbnail,
             githubRepo.topics);
     }
 

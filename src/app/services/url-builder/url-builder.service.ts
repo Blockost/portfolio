@@ -11,12 +11,12 @@ export class UrlBuilderService {
    * HTTP or HTTPS
    * @param baseUrl the base URL (e.g 'github.com' )
    * @param resourceUrl the resource URL (e.g '/user/edit' )
-   * @param params  map containing parameter names and values as key-value pairs
+   * @param params (Optional) map containing parameter names and values as key-value pairs
    * @param useHttps indicates whether to use HTTP or HTTPS
    */
   build(baseUrl: string,
     resourceUrl: string,
-    params: Map<string, string>,
+    params?: Map<string, string>,
     useHttps = true) {
 
     baseUrl = this.removeSlashes(baseUrl);
@@ -30,16 +30,17 @@ export class UrlBuilderService {
       params.forEach((value: string, key: string) => {
         url += `${key}=${value}&`;
       });
+
+      /* Delete the last '&' appended to the url
+      * It is actually cleaner and faster to append
+      * a '&' all the time and then delete the last one
+      * than checking whether the key-value pair in the map
+      * is actually the last one everytime...
+      */
+      url = url.slice(0, -1);
     }
 
-    /* Delete the last '&' appended to the url
-    * It is actually cleaner and faster to append
-    * an '&' all the time and then delete the last one
-    * than checking whether the key-value pair in the map
-    * is the last one everytime...
-    */
-    return url.slice(0, -1);
-
+    return url;
   }
 
 

@@ -5,16 +5,20 @@
 }
 
 .custom-card {
-  width: 40%;
+  width: 30%;
   margin-top: 1%;
   margin-bottom: 1%;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.5s ease-in-out;
+  border-radius: 2px;
+  background-color: white;
+  //box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
+  //transition: box-shadow 0.5s ease-in-out;
 }
 
 .custom-card:hover {
   box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
 }
+
+.card-he
 
 .custom-card-actions {
   display: flex;

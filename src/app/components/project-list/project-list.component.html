@@ -1,8 +1,34 @@
 <div class="card-container">
+  <div *ngFor="let project of projects" class="card custom-card">
+    <div class="card-header">
+      <h5 class="card-title">
+        {{project.name}}
+      </h5>
+      <span *ngFor="let topic of project.topics" class="label label-info">
+        {{topic}}
+      </span>
+    </div>
+    <img class="card-img-top" [src]="project.imgUrl" (error)="this.project.imgUrl='/assets/img/fake.jpg'" alt="project image">
+    <div class="card-body">
+      <p class="card-text">{{project.description}}</p>
+      <div class="custom-card-actions">
+        <div *ngIf="project.githubUrl">
+          <a [href]="project.githubUrl" class="btn btn-round" target="_blank">
+            <i class="fa fa-github"></i> GITHUB
+          </a>
+        </div>
+        <div *ngIf="project.websiteUrl">
+          <a [href]="project.websiteUrl" class="btn btn-round" target="_blank">DEMO</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Material Design cards: For reference -->
   <mat-card *ngFor="let project of projects" class="custom-card">
     <mat-card-header>
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <!-- TODO: add programming language to project card content --> 
+      <!-- TODO: add programming language to project card content -->
       <mat-card-title>
         {{project.name}}
         <span *ngFor="let topic of project.topics" class="label label-default">
@@ -17,7 +43,7 @@
     <mat-card-content>
       {{project.description}}
     </mat-card-content>
-    
+
     <mat-card-actions class="custom-card-actions">
       <div *ngIf="project.githubUrl">
         <a mat-button [href]="project.githubUrl" target="_blank">GITHUB</a>
