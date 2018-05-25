@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "config:dev": "ts-node ./src/set-env.ts --env=dev",
-    "config:prod": "ts-node ./src/set-env.ts --env=prod",    
+    "config:prod": "ts-node ./src/set-env.ts --env=prod",
     "postinstall": "npm run config:prod && ng build --env=prod --prod",
     "start": "npm run config:dev && ng serve --env=dev",
     "build": "ng build",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@angular/animations": "^5.0.5",
     "@angular/cdk": "^5.0.0-rc.2",
-    "@angular/cli": "^1.5.5",
+    "@angular/cli": "^1.7.4",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/compiler-cli": "^5.0.0",
