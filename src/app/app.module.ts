@@ -24,7 +24,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { OnScrollTransparencyDirective } from './directives/onScrollTransparency/on-scroll-transparency.directive';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     OnScrollTransparencyDirective,
     ProjectsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,12 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     RoutingModule
   ],
-  providers: [ProjectService, GithubService, UrlBuilderService, ProjectFakerService],
+  providers: [
+    ProjectService,
+    GithubService,
+    UrlBuilderService,
+    ProjectFakerService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
