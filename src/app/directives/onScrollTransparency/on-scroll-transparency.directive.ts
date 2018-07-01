@@ -15,7 +15,7 @@ import { DOCUMENT } from '@angular/common';
 export class OnScrollTransparencyDirective implements OnInit {
 
   targetElement: ElementRef;
-  @Input() scrollDistance: number;
+  @Input() scrollDistance!: number;
 
   constructor(private el: ElementRef, private renderer: Renderer2,
     @Inject(DOCUMENT) document: any) {
