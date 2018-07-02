@@ -12,27 +12,31 @@
 </div>
 
 <div class="card-container">
-  <div *ngFor="let project of filteredProjects" class="card custom-card">
+  <div *ngFor="let project of filteredProjects" class="custom-card">
     <div class="card-header">
       <!-- TODO: add programming language to project card content -->
       <h5 class="card-title">
         {{project.name}}
       </h5>
-      <span *ngFor="let topic of project.topics" class="label label-info">
-        {{topic}}
-      </span>
+      <div class="custom-card-topics">
+        <span *ngFor="let topic of project.topics" class="label label-info">
+          {{topic}}
+        </span>
+      </div>
     </div>
-    <img class="card-img-top" [src]="project.imgUrl" (error)="this.project.imgUrl='/assets/img/fake.jpg'" alt="project image">
-    <div class="card-body">
-      <p class="card-text">{{project.description}}</p>
+    <img class="card-img-top" [src]="project.imgUrl" (error)="project.imgUrl='/assets/img/fake.jpg'" alt="project image">
+    <div class="custom-card-body">
+      <div class="card-text">{{project.description}}</div>
       <div class="custom-card-actions">
         <div *ngIf="project.githubUrl">
           <a [href]="project.githubUrl" class="btn btn-round" target="_blank">
-            <i class="fa fa-github"></i> GITHUB
+            <i class="fa fa-github"></i> View on Github
           </a>
         </div>
         <div *ngIf="project.websiteUrl">
-          <a [href]="project.websiteUrl" class="btn btn-round" target="_blank">DEMO</a>
+          <a [href]="project.websiteUrl" class="btn btn-round" target="_blank">
+            <i class="fa fa-desktop"></i> Live Demo
+          </a>
         </div>
       </div>
     </div>
