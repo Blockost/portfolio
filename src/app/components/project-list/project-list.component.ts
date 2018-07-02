@@ -10,11 +10,13 @@ import { ProjectFakerService } from '../../services/faker/project/project-faker.
   styleUrls: ['./project-list.component.scss']
 })
 export class ProjectListComponent implements OnInit {
+  private projects: Project[] = [];
+  filteredProjects: Project[] = [];
 
-  projects: Project[] = [];
-
-  constructor(private projectService: ProjectService,
-    private projectFakerService: ProjectFakerService) { }
+  constructor(
+    private projectService: ProjectService,
+    private projectFakerService: ProjectFakerService
+  ) {}
 
   ngOnInit() {
     this.populateProjects();
@@ -23,14 +25,24 @@ export class ProjectListComponent implements OnInit {
   populateProjects() {
     this.projectService
       .getProjects()
-      .then(projects => this.projects = projects)
+      .then(projects => {
+        this.projects = projects;
+        this.filteredProjects = projects;
+      })
       .catch(this.handleError.bind(this));
+  }
+
+  filter(filter: string) {
+    this.filteredProjects = this.projects.filter(project =>
+      project.contains(filter)
+    );
   }
 
   private handleError(error: any) {
     this.projects = this.projectFakerService.fakeMassively(5);
 
-    console.error('Cannot retrieve projects from Github. Mock projects have been generated.');
+    console.error(
+      'Cannot retrieve projects from Github. Mock projects have been generated.'
+    );
   }
-
 }

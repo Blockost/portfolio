@@ -1,6 +1,20 @@
+<div class="container">
+  <div class="filter-container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group has-success">
+          <input #projectFilter type="text" class="form-control form-control-success" placeholder="Filter the list of projects by project's name, description, programming language or topics"
+            (keyup)="filter(projectFilter.value)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="card-container">
-  <div *ngFor="let project of projects" class="card custom-card">
+  <div *ngFor="let project of filteredProjects" class="card custom-card">
     <div class="card-header">
+      <!-- TODO: add programming language to project card content -->
       <h5 class="card-title">
         {{project.name}}
       </h5>
@@ -23,34 +37,3 @@
       </div>
     </div>
   </div>
-
-  <!-- Material Design cards: For reference -->
-  <mat-card *ngFor="let project of projects" class="custom-card">
-    <mat-card-header>
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <!-- TODO: add programming language to project card content -->
-      <mat-card-title>
-        {{project.name}}
-        <span *ngFor="let topic of project.topics" class="label label-default">
-          {{topic}}
-        </span>
-      </mat-card-title>
-      <mat-card-subtitle>I am the subtitle</mat-card-subtitle>
-    </mat-card-header>
-
-    <img mat-card-image [src]="project.imgUrl" alt="project image">
-
-    <mat-card-content>
-      {{project.description}}
-    </mat-card-content>
-
-    <mat-card-actions class="custom-card-actions">
-      <div *ngIf="project.githubUrl">
-        <a mat-button [href]="project.githubUrl" target="_blank">GITHUB</a>
-      </div>
-      <div *ngIf="project.websiteUrl">
-        <a mat-button [href]="project.websiteUrl" target="_blank">DEMO</a>
-      </div>
-    </mat-card-actions>
-  </mat-card>
-</div>
