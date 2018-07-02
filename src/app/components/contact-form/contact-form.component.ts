@@ -14,9 +14,9 @@ export class ContactFormComponent implements OnInit {
   @ViewChild('emailAddress') private emailAddressEl!: ElementRef;
   @ViewChild('message') private messageEl!: ElementRef;
 
-  private formGroupClass = 'form-group';
-  private isEmailValid = true;
-  private isMessageValid = true;
+  formGroupClass = 'form-group';
+  isEmailValid = true;
+  isMessageValid = true;
 
   constructor() {}
 

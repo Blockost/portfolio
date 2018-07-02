@@ -6,7 +6,7 @@
         <div class="col-md-12">
           <div [class]="formGroupClass">
             <div *ngIf="!isEmailValid" class="form-control-feedback">Please, enter a valid email so I can answer you 😎</div>
-            <input #emailAddress type="email" class="form-control form-control-success" placeholder="Your email address" (keyup)="validateEmailAddress(emailAddress.value)">
+            <input #emailAddress type="email" class="form-control form-control-success" placeholder="Your email address" (keyup)="validateEmailAddress()">
           </div>
         </div>
       </div>
