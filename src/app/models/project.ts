@@ -36,16 +36,20 @@ export class Project {
 
   /**
    * Returns true if the project contains (substring matching) the given string in either
-   *  its name, description, language or list of topics.
+   *  its name, description, language or list of topics. This method is *NOT* case-sensitive
    *
    * @param str the string to search for
    */
   contains(str: string): boolean {
+    str = str.toLowerCase();
+
     return (
-      (this.name != null && this.name.includes(str)) ||
-      (this.description != null && this.description.includes(str)) ||
-      (this.language != null && this.language.includes(str)) ||
-      (this.topics != null && this.topics.some(topic => topic.includes(str)))
+      (this.name != null && this.name.toLowerCase().includes(str)) ||
+      (this.description != null &&
+        this.description.toLowerCase().includes(str)) ||
+      (this.language != null && this.language.toLowerCase().includes(str)) ||
+      (this.topics != null &&
+        this.topics.some(topic => topic.toLowerCase().includes(str)))
     );
   }
 }
