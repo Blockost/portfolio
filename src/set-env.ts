@@ -7,19 +7,23 @@ const dotenv = require('dotenv');
 const envPath = 'src/environments/.env';
 
 if (!existsSync(envPath)) {
-    console.log(`${envPath} not found. Assuming environment variables are set in the system.`);
+  console.log(
+    `${envPath} not found. Assuming environment variables are set in the system.`
+  );
 } else {
-    // Load env variables from the .env file into process.env object
-    dotenv.config({ path: envPath });
+  // Load env variables from the .env file into process.env object
+  dotenv.config({ path: envPath });
 }
 
 if (argv.env === undefined) {
-    console.log('You must specify an environment using --env={YOUR_ENV}');
-    process.exit(0);
+  console.log('You must specify an environment using --env={YOUR_ENV}');
+  process.exit(0);
 }
 
 // Get it from yargs's argv object
 // Passed liked this: `ts-node set-env.ts --env=dev`
+// TODO: 2018-07-03 Renamed env to configuration once project is
+// upgraded to Angular 6. Don't forget to edit package.json!
 const environment = argv.env;
 const isProd = environment === 'prod';
 
@@ -30,8 +34,8 @@ const configContent = `export const environment = {
 };\n`;
 
 writeFile(configFile, configContent, (err: any) => {
-    if (err) {
-        console.log(err);
-    }
-    console.log(`Output generated at ${configFile}`);
+  if (err) {
+    console.log(err);
+  }
+  console.log(`Output generated at ${configFile}`);
 });
