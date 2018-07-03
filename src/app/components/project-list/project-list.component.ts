@@ -39,7 +39,9 @@ export class ProjectListComponent implements OnInit {
   }
 
   private handleError(error: any) {
-    this.projects = this.projectFakerService.fakeMassively(5);
+    const _projects = this.projectFakerService.fakeMassively(5);
+    this.projects = _projects;
+    this.filteredProjects = _projects;
 
     console.error(
       'Cannot retrieve projects from Github. Mock projects have been generated.'
