@@ -2,12 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Custom modules
 import { RoutingModule } from './modules/routing/routing.module';
-import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 
 // Custom components
 import { AppComponent } from './app.component';
@@ -45,8 +43,6 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    AngularMaterialModule,
-    BrowserAnimationsModule,
     RoutingModule
   ],
   providers: [

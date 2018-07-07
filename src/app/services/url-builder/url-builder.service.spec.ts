@@ -10,9 +10,10 @@ describe('UrlBuilderService', () => {
     });
   });
 
-  it('should be created', inject([UrlBuilderService], (service: UrlBuilderService) => {
-    expect(service).toBeTruthy(); 
-  }));
-
-
+  it('should be created', inject(
+    [UrlBuilderService],
+    (service: UrlBuilderService) => {
+      expect(service).toBeTruthy();
+    }
+  ));
 });
