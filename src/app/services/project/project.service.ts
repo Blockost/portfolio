@@ -59,9 +59,7 @@ export class ProjectService {
       .then(res => {
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
-            projectLanguages.push(
-              new ProjectLanguage(key.toLowerCase(), res[key])
-            );
+            projectLanguages.push(new ProjectLanguage(key, res[key]));
           }
         }
         return projectLanguages;

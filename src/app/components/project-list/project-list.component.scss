@@ -37,7 +37,7 @@ $cards-per-line: (
   }
 }
 .card {
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
 }
 .card-header {
   // Removing bootstrap ugly css :)
@@ -76,6 +76,12 @@ $cards-per-line: (
 }
 .custom-card-topics {
   display: flex;
+}
+.card-body {
+  background: white;
+}
+.card-footer {
+  background: white;
 }
 .custom-card-actions {
   width: 100%;
@@ -120,7 +126,7 @@ input {
   background-color: $c-color;
 }
 .cmake-color {
-  background-color: $cmake-color
+  background-color: $cmake-color;
 }
 .cpp-color {
   background-color: $cpp-color;

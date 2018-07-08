@@ -14,7 +14,8 @@ export class ProjectLanguage {
   }
 
   private translateNametoCssName(name: string): string {
-    switch (name.toLowerCase()) {
+    const lowerCaseName = name.toLowerCase();
+    switch (lowerCaseName) {
       case 'c++':
         return 'cpp';
       case 'c#':
@@ -22,7 +23,7 @@ export class ProjectLanguage {
       case 'jupyter notebook':
         return 'jupyter-notebook';
       default:
-        return name;
+        return lowerCaseName;
     }
   }
 }
