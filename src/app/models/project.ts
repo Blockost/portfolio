@@ -1,3 +1,5 @@
+import { ProjectLanguage } from './projectLanguage';
+
 /**
  * This class represents a Github repository in this portfolio.
  */
@@ -5,7 +7,7 @@ export class Project {
   constructor(
     public name: string,
     public description: string,
-    public language: string,
+    public languages: ProjectLanguage[],
     public websiteUrl: string,
     public githubUrl: string,
     public imgUrl: string,
@@ -17,8 +19,9 @@ export class Project {
    * JSON object.
    *
    * @param githubRepo the Github repo object to Projectify
+   * @param languages the list of languages for this githubRepo
    */
-  static fromGithub(githubRepo: any): Project {
+  static fromGithub(githubRepo: any, languages: ProjectLanguage[]): Project {
     const thumbnail = `https://github.com/Blockost/${
       githubRepo.name
     }/raw/master/thumbnail.jpg`;
@@ -26,7 +29,7 @@ export class Project {
     return new Project(
       githubRepo.name,
       githubRepo.description,
-      githubRepo.language,
+      languages,
       githubRepo.homepage,
       githubRepo.html_url,
       thumbnail,
@@ -44,12 +47,34 @@ export class Project {
     str = str.toLowerCase();
 
     return (
-      (this.name != null && this.name.toLowerCase().includes(str)) ||
-      (this.description != null &&
-        this.description.toLowerCase().includes(str)) ||
-      (this.language != null && this.language.toLowerCase().includes(str)) ||
-      (this.topics != null &&
-        this.topics.some(topic => topic.toLowerCase().includes(str)))
+      this.nameContains(str) ||
+      this.descriptionContains(str) ||
+      this.languagesContains(str) ||
+      this.topicsContains(str)
+    );
+  }
+
+  private nameContains(str: string): boolean {
+    return this.name != null && this.name.toLowerCase().includes(str);
+  }
+
+  private descriptionContains(str: string): boolean {
+    return (
+      this.description != null && this.description.toLowerCase().includes(str)
+    );
+  }
+
+  private languagesContains(str: string): boolean {
+    return (
+      this.languages != null &&
+      this.languages.some(language => language.name.toLowerCase().includes(str))
+    );
+  }
+
+  private topicsContains(str: string): boolean {
+    return (
+      this.topics != null &&
+      this.topics.some(topic => topic.toLowerCase().includes(str))
     );
   }
 }

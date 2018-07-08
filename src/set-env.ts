@@ -21,7 +21,7 @@ if (argv.env === undefined) {
 }
 
 // Get it from yargs's argv object
-// Passed liked this: `ts-node set-env.ts --env=dev`
+// Passed like this: `ts-node set-env.ts --env=dev`
 // TODO: 2018-07-03 Renamed env to configuration once project is
 // upgraded to Angular 6. Don't forget to edit package.json!
 const environment = argv.env;

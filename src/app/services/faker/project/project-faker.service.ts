@@ -2,18 +2,19 @@ import { Injectable } from '@angular/core';
 
 import { IFaker } from '../faker';
 import { Project } from '../../../models/project';
+import { ProjectLanguage } from '../../../models/projectLanguage';
 
 @Injectable()
 export class ProjectFakerService implements IFaker {
   private readonly PROJECT_NAME = 'PROJECT_MOCK';
   private readonly PROJECT_DESC = 'Mock project for app showcase';
-  private readonly PROJECT_LANG = 'Javascript';
+  private readonly PROJECT_LANG = [new ProjectLanguage('Javascript', 100)];
   private readonly PROJECT_URL = '';
   private readonly PROJECT_GITHUB_URL = '';
   private readonly PROJECT_IMG = '/assets/img/fake.jpg';
   private readonly PROJECT_TOPICS = ['default'];
 
-  constructor() { }
+  constructor() {}
 
   fake(): Project {
     return new Project(
@@ -32,8 +33,6 @@ export class ProjectFakerService implements IFaker {
     for (let i = 0; i < n; i++) {
       projects.push(this.fake());
     }
-
     return projects;
   }
-
 }
