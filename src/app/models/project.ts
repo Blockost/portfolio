@@ -19,9 +19,8 @@ export class Project {
    * JSON object.
    *
    * @param githubRepo the Github repo object to Projectify
-   * @param languages the list of languages for this githubRepo
    */
-  static fromGithub(githubRepo: any, languages: ProjectLanguage[]): Project {
+  static fromGithub(githubRepo: any): Project {
     const thumbnail = `https://github.com/Blockost/${
       githubRepo.name
     }/raw/master/thumbnail.jpg`;
@@ -29,7 +28,7 @@ export class Project {
     return new Project(
       githubRepo.name,
       githubRepo.description,
-      languages,
+      [],
       githubRepo.homepage,
       githubRepo.html_url,
       thumbnail,

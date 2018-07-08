@@ -22,15 +22,39 @@ export class ProjectService {
   private toProjects(githubRepoCollections: any[]): Project[] {
     return githubRepoCollections
       .filter(repo => repo.fork === false)
-      .map(repo =>
-        Project.fromGithub(repo, this.getLanguagesForRepo(repo.name))
-      );
+      .map(repo => this.buildProjectFromGithubRepo(repo));
   }
 
-  private getLanguagesForRepo(repoName: string): ProjectLanguage[] {
+  private buildProjectFromGithubRepo(githubRepo: any): Project {
+    // build project from github repository JSON object
+    const project = Project.fromGithub(githubRepo);
+
+    // Retrive all programming languages for that repository
+    this.getLanguagesForRepo(githubRepo.name).then(languages => {
+      // When it's OK, assign them to it
+      project.languages = languages;
+
+      // Store total numer of bytes of code
+      const totalBytesOfCode = project.languages
+        .map(language => language.bytesOfCode)
+        .reduce((bytesOfCode1, bytesOfCode2) => bytesOfCode1 + bytesOfCode2);
+
+      // Compute programming language percentage for each one
+      project.languages.forEach(
+        language =>
+          (language.percentage = Math.round(
+            this.computeLanguagePercentage(language, totalBytesOfCode)
+          ))
+      );
+    });
+
+    return project;
+  }
+
+  private getLanguagesForRepo(repoName: string): Promise<ProjectLanguage[]> {
     const projectLanguages: ProjectLanguage[] = [];
 
-    this.githubService
+    return this.githubService
       .getLanguagesForRepo(repoName)
       .then(res => {
         for (const key in res) {
@@ -40,10 +64,16 @@ export class ProjectService {
             );
           }
         }
+        return projectLanguages;
       })
       .catch(this.handleError);
+  }
 
-    return projectLanguages;
+  private computeLanguagePercentage(
+    language: ProjectLanguage,
+    numberOfLanguages: number
+  ): number {
+    return (language.bytesOfCode / numberOfLanguages) * 100;
   }
 
   private handleError(error: any): Promise<any> {
