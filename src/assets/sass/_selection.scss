@@ -1,0 +1,13 @@
+/*
+* Custom style for selection highlight
+*/
+
+::-moz-selection {
+  color: red;
+  background: rgba($color: #ffffff, $alpha: 0);
+}
+
+::selection {
+  color: red;
+  background: rgba($color: #ffffff, $alpha: 0);
+}
