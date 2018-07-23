@@ -23,6 +23,8 @@ import { OnScrollTransparencyDirective } from './directives/onScrollTransparency
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
+import { ScrollToDirective } from './directives/scroll-to/scroll-to.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     OnScrollTransparencyDirective,
     ProjectsComponent,
     ProfileComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    VerticalTimelineComponent,
+    ScrollToDirective,
   ],
   imports: [
     BrowserModule,

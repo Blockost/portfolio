@@ -7,9 +7,14 @@ import { LandingComponent } from '../../pages/landing/landing.component';
 import { HomeComponent } from '../../pages/home/home.component';
 import { ProjectsComponent } from '../../pages/projects/projects.component';
 import { ProfileComponent } from '../../profile/profile.component';
+import { VerticalTimelineComponent } from '../../components/vertical-timeline/vertical-timeline.component';
 
 // Add routes to components here (order matters) !
 const ROUTES = [
+  {
+    path: 'timeline',
+    component: VerticalTimelineComponent
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -24,7 +29,7 @@ const ROUTES = [
   },
   {
     path: 'projects',
-    component: ProjectsComponent,
+    component: ProjectsComponent
   },
   {
     path: '404',
@@ -42,10 +47,8 @@ const ROUTES = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(ROUTES)
-  ],
+  imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule],
   declarations: []
 })
-export class RoutingModule { }
+export class RoutingModule {}
