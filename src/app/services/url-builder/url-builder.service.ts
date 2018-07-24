@@ -5,7 +5,6 @@ export class UrlBuilderService {
 
   constructor() { }
 
-
   /**
    * build an URL by smartly concatenating the base, the resource and the params. Can build URL using
    * HTTP or HTTPS
@@ -15,9 +14,9 @@ export class UrlBuilderService {
    * @param useHttps indicates whether to use HTTP or HTTPS
    */
   build(baseUrl: string,
-    resourceUrl: string,
-    params?: Map<string, string>,
-    useHttps = true) {
+        resourceUrl: string,
+        params?: Map<string, string>,
+        useHttps = true) {
 
     baseUrl = this.removeSlashes(baseUrl);
     resourceUrl = this.removeSlashes(resourceUrl);
@@ -42,7 +41,6 @@ export class UrlBuilderService {
 
     return url;
   }
-
 
   /**
    * Remove slash ('/') at the beginning and the

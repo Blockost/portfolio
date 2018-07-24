@@ -66,14 +66,14 @@ export class Project {
   private languagesContains(str: string): boolean {
     return (
       this.languages != null &&
-      this.languages.some(language => language.name.toLowerCase().includes(str))
+      this.languages.some((language) => language.name.toLowerCase().includes(str))
     );
   }
 
   private topicsContains(str: string): boolean {
     return (
       this.topics != null &&
-      this.topics.some(topic => topic.toLowerCase().includes(str))
+      this.topics.some((topic) => topic.toLowerCase().includes(str))
     );
   }
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { GithubService } from '../github/github.service';
 import { Project } from '../../models/project';
 import { ProjectLanguage } from '../../models/projectLanguage';
+import { GithubService } from '../github/github.service';
 
 @Injectable()
 export class ProjectService {
@@ -15,14 +15,14 @@ export class ProjectService {
   getProjects(): Promise<Project[]> {
     return this.githubService
       .getRepos()
-      .then(res => this.toProjects(res))
+      .then((res) => this.toProjects(res))
       .catch(this.handleError);
   }
 
   private toProjects(githubRepoCollections: any[]): Project[] {
     return githubRepoCollections
-      .filter(repo => repo.fork === false)
-      .map(repo => this.buildProjectFromGithubRepo(repo));
+      .filter((repo) => repo.fork === false)
+      .map((repo) => this.buildProjectFromGithubRepo(repo));
   }
 
   private buildProjectFromGithubRepo(githubRepo: any): Project {
@@ -30,18 +30,18 @@ export class ProjectService {
     const project = Project.fromGithub(githubRepo);
 
     // Retrive all programming languages for that repository
-    this.getLanguagesForRepo(githubRepo.name).then(languages => {
+    this.getLanguagesForRepo(githubRepo.name).then((languages) => {
       // When it's OK, assign them to it
       project.languages = languages;
 
       // Store total numer of bytes of code
       const totalBytesOfCode = project.languages
-        .map(language => language.bytesOfCode)
+        .map((language) => language.bytesOfCode)
         .reduce((bytesOfCode1, bytesOfCode2) => bytesOfCode1 + bytesOfCode2);
 
       // Compute programming language percentage for each one
       project.languages.forEach(
-        language =>
+        (language) =>
           (language.percentage = Math.round(
             this.computeLanguagePercentage(language, totalBytesOfCode)
           ))
@@ -56,7 +56,7 @@ export class ProjectService {
 
     return this.githubService
       .getLanguagesForRepo(repoName)
-      .then(res => {
+      .then((res) => {
         for (const key in res) {
           if (res.hasOwnProperty(key)) {
             projectLanguages.push(new ProjectLanguage(key, res[key]));

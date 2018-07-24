@@ -1,24 +1,26 @@
+import { DOCUMENT } from '@angular/common';
 import {
   Directive,
+  ElementRef,
   HostListener,
   Inject,
-  ElementRef,
+  Input,
   OnInit,
-  Renderer2,
-  Input
+  Renderer2
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 
 @Directive({
   selector: '[appOnScrollTransparency]'
 })
 export class OnScrollTransparencyDirective implements OnInit {
-
   targetElement: ElementRef;
   @Input() scrollDistance!: number;
 
-  constructor(private el: ElementRef, private renderer: Renderer2,
-    @Inject(DOCUMENT) document: any) {
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) document: any
+  ) {
     this.targetElement = el;
   }
 
@@ -43,7 +45,7 @@ export class OnScrollTransparencyDirective implements OnInit {
    * @param wait time to wait before invoking the function (in ms)
    * @param immediate trigger the function on the leading edge. Otherwise, on the trailing edge.
    */
-  private debounce(fn: Function, wait: number, immediate: boolean) {
+  private debounce(fn: () => void, wait: number, immediate: boolean) {
     let timeout: any;
     return () => {
       clearTimeout(timeout);

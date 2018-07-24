@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjectService } from '../../services/project/project.service';
 import { Project } from '../../models/project';
 import { ProjectFakerService } from '../../services/faker/project/project-faker.service';
+import { ProjectService } from '../../services/project/project.service';
 
 @Component({
   selector: 'app-project-list',
@@ -25,7 +25,7 @@ export class ProjectListComponent implements OnInit {
   populateProjects() {
     this.projectService
       .getProjects()
-      .then(projects => {
+      .then((projects) => {
         this.projects = projects;
         this.filteredProjects = projects;
       })
@@ -33,7 +33,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   filter(filter: string) {
-    this.filteredProjects = this.projects.filter(project =>
+    this.filteredProjects = this.projects.filter((project) =>
       project.contains(filter)
     );
   }

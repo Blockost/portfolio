@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { IFaker } from '../faker';
 import { Project } from '../../../models/project';
 import { ProjectLanguage } from '../../../models/projectLanguage';
+import { IFaker } from '../faker';
 
 @Injectable()
 export class ProjectFakerService implements IFaker {

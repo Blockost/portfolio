@@ -1,7 +1,7 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
-import { UrlBuilderService } from './url-builder.service';
 import { serializePath } from '@angular/router/src/url_tree';
+import { UrlBuilderService } from './url-builder.service';
 
 describe('UrlBuilderService', () => {
   beforeEach(() => {

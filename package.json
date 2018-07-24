@@ -11,8 +11,8 @@
     "start": "npm run config:dev && ng serve --env=dev",
     "reinstall": "rm -rf ./node_modules/ && npm install",
     "build": "ng build",
-    "test": "true",
-    "lint": "ng lint",
+    "test": "npm run lint",
+    "lint": "ng lint --format stylish",
     "e2e": "ng e2e"
   },
   "engines": {

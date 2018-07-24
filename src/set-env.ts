@@ -1,8 +1,7 @@
-import { writeFile, existsSync } from 'fs';
+import * as dotenv from 'dotenv';
+import { existsSync, writeFile } from 'fs';
 import { argv } from 'yargs';
 
-// Load dotenv module
-const dotenv = require('dotenv');
 // Path to .env file (local only, not committed) containing environment variables
 const envPath = 'src/environments/.env';
 
