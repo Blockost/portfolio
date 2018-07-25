@@ -123,18 +123,15 @@ $stem-default-glow: white;
 
 .stem-padding {
   width: $stem-width;
-  height: $stem-width; // Override with inline styling
+  height: 120px;
   margin: 0px auto;
   background-color: #112c30;
 }
 
 .single-stem-icon {
   width: $stem-width;
-  height: $stem-width; // Override with inline styling
+  height: $stem-width;
   margin: 0px auto;
-}
-
-.single-stem-icon.scroll-to-top {
   cursor: pointer;
   background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/scroll-to-top-icon.png);
 }
