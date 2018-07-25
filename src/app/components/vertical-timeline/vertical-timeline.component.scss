@@ -1,6 +1,7 @@
 /*==========  Global  ==========*/
 
 $centered-content-width: 1024px;
+$icon-size: 70px;
 
 /*==========  Basics  ==========*/
 
@@ -183,16 +184,16 @@ $stem-default-glow: white;
     }
 
     &.music-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/University_Simon.png');
-      background-size: 60px;
+      background-image: url('../../../assets/img/icons/university.png');
+      background-size: $icon-size;
     }
     &.bitbucket-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/Cap_Pas_Contour.png');
-      background-size: 60px;
+      background-image: url('../../../assets/img/icons/graduation-cap.png');
+      background-size: $icon-size;
     }
     &.m-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/SuitCase.png');
-      background-size: 60px;
+      background-image: url('../../../assets/img/icons/suitcase.png');
+      background-size: $icon-size;
     }
     &.twitter-icon .stem-overlay .icon {
       background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/twitter-icon.png);
