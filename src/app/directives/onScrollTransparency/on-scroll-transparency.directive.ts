@@ -1,36 +1,20 @@
-import { DOCUMENT } from '@angular/common';
-import {
-  Directive,
-  ElementRef,
-  HostListener,
-  Inject,
-  Input,
-  OnInit,
-  Renderer2
-} from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appOnScrollTransparency]'
 })
 export class OnScrollTransparencyDirective implements OnInit {
-  targetElement: ElementRef;
   @Input() scrollDistance!: number;
 
-  constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) document: any
-  ) {
-    this.targetElement = el;
-  }
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
-    this.renderer.listen('window', 'scroll', (evt: any) => {
+    this.renderer.listen('window', 'scroll', () => {
       this.debounce(this.applyTransparency.apply(this), 200, true);
     });
   }
 
-  private applyTransparency(el: ElementRef) {
+  private applyTransparency() {
     if (document.documentElement.scrollTop >= this.scrollDistance) {
       this.renderer.removeClass(this.el.nativeElement, 'navbar-transparent');
     } else {

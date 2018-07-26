@@ -13,7 +13,9 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
+import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
 import { OnScrollTransparencyDirective } from './directives/onScrollTransparency/on-scroll-transparency.directive';
+import { ScrollToDirective } from './directives/scroll-to/scroll-to.directive';
 import { HomeComponent } from './pages/home/home.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
@@ -36,7 +38,9 @@ import { UrlBuilderService } from './services/url-builder/url-builder.service';
     OnScrollTransparencyDirective,
     ProjectsComponent,
     ProfileComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    VerticalTimelineComponent,
+    ScrollToDirective
   ],
   imports: [
     BrowserModule,
