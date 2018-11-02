@@ -10,77 +10,19 @@
 
     <div class="post-wrapper">
 
-      <article class="post university-icon">
+      <article *ngFor="let event of timelineEvents" class="post" [ngClass]="event.type === 'Education' ? 'university-icon' : 'suitcase-icon'"
+        data-stem-color="yellow">
         <div class="stem-overlay">
           <div class="icon"></div>
           <div class="stem-mask"></div>
         </div>
 
         <div class="post-content">
-          <p class="meta">2012 - 2017 (France)</p>
-          <h2 class="post-title">Engineer's degree, Computer Science - EISTI</h2>
+          <p class="meta">{{event.from}} - {{event.to}} ({{event.location}})</p>
+          <h2 class="post-title">{{event.title}} - {{event.schoolOrCompany}}</h2>
           <div class="entry-content">
             <ul>
-              <li>Software Engineering: design patterns, software design, agile development</li>
-              <li>Parallel Computing: concurrency, priority, mutexes, semaphores, OpenMP, load balancing</li>
-              <li>Web applications and services: SOAP, REST, service-oriented architecture (SOA), full-stack development</li>
-              <li>Operating Systems: computer's architecture, IPCs, scheduling</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <article class="post suitcase-icon" data-stem-color="yellow">
-        <div class="stem-overlay">
-          <div class="icon"></div>
-          <div class="stem-mask"></div>
-        </div>
-
-        <div class="post-content">
-          <p class="meta">May 2016 - September 2016 (Vienna, Austria)</p>
-          <h2 class="post-title">Softare Developer - Amaris</h2>
-          <div class="entry-content">
-            <p>Dedicated to the IT department, I designed and developed several applications related to engaging fields such
-              as IT processes planning, deployment automation or real time backups monitoring.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="post university-icon" data-stem-color="green">
-        <div class="stem-overlay">
-          <div class="icon"></div>
-          <div class="stem-mask"></div>
-        </div>
-
-        <div class="post-content">
-          <p class="meta">2016 - 2017 (Edinburgh, Scotland)</p>
-          <h2 class="post-title">Master’s Degree, Mathematics and Computer Science - Heriot-Watt University</h2>
-          <div class="entry-content">
-            <ul>
-              <li>Double diploma with Heriot-Watt University in Scotland, with distinction</li>
-              <li>Software Engineering: design patterns, software design, agile development and resources planning</li>
-              <li>Computer Network Security: cryptography, secured Internet connections</li>
-              <li>Network Applications: Internet protocols, (web)Sockets, Web Security, reliable connections</li>
-              <li>Relational and Non Relational Databases</li>
-              <li>E-commerce Technology: technical and business-orientated concepts</li>
-              <li>Artificial Intelligence: Natural Language Processing (NLP) and Deep Learning</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-
-      <article class="post suitcase-icon" data-stem-color="white">
-        <div class="stem-overlay">
-          <div class="icon"></div>
-          <div class="stem-mask"></div>
-        </div>
-
-        <div class="post-content">
-          <p class="meta">November 2017 - Present (Montréal, QC, Canada)</p>
-          <h2 class="post-title">IT Consultant - Amaris</h2>
-          <div class="entry-content">
-            <ul>
-              <li>Zimmer Biomet</li>
+              <li *ngFor="let item of event.description">{{item}}</li>
             </ul>
           </div>
         </div>

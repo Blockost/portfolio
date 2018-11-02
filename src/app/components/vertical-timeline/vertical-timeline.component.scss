@@ -157,14 +157,14 @@ $stem-default-glow: white;
       opacity: 0;
     }
 
-    &:hover .post-content,
+    /* &:hover .post-content,
     &.active .post-content {
       opacity: 1;
       .meta {
         opacity: 1;
         transform: none;
       }
-    }
+    } */
 
     &:nth-child(even) {
       float: right;
@@ -232,7 +232,7 @@ $stem-default-glow: white;
         color: rgba(255, 0, 0, 1);
         margin: 0px 0px 15px 0px;
         letter-spacing: 1px;
-        opacity: 0;
+        opacity: 1;
         transition-duration: 0.4s;
         transform: translateY(-5px);
       }
