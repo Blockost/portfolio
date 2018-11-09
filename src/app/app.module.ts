@@ -17,10 +17,8 @@ import { VerticalTimelineComponent } from './components/vertical-timeline/vertic
 import { OnScrollTransparencyDirective } from './directives/onScrollTransparency/on-scroll-transparency.directive';
 import { ScrollToDirective } from './directives/scroll-to/scroll-to.directive';
 import { HomeComponent } from './pages/home/home.component';
-import { LandingComponent } from './pages/landing/landing.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
-import { ProfileComponent } from './profile/profile.component';
 import { ProjectFakerService } from './services/faker/project/project-faker.service';
 import { GithubService } from './services/github/github.service';
 import { ProjectService } from './services/project/project.service';
@@ -31,13 +29,11 @@ import { UrlBuilderService } from './services/url-builder/url-builder.service';
     AppComponent,
     ProjectListComponent,
     PageNotFoundComponent,
-    LandingComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
     OnScrollTransparencyDirective,
     ProjectsComponent,
-    ProfileComponent,
     ContactFormComponent,
     VerticalTimelineComponent,
     ScrollToDirective
