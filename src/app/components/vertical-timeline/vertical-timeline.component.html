@@ -17,9 +17,11 @@
           <div class="stem-mask"></div>
         </div>
 
+        <!-- TODO: 2018-12-24 Blockost -->
+        <!-- Make timeline item looks more like cards -->
         <div class="post-content">
-          <p class="meta">{{event.from}} - {{event.to}} ({{event.location}})</p>
           <h2 class="post-title">{{event.title}} - {{event.schoolOrCompany}}</h2>
+          <h6>{{event.from}} - {{event.to}} ({{event.location}})</h6>
           <div class="entry-content">
             <ul>
               <li *ngFor="let item of event.description">{{item}}</li>
@@ -28,11 +30,8 @@
         </div>
       </article>
     </div>
-    <!-- post-wrapper -->
-
+    
     <div class="single-stem-icon" appScrollTo targetElement=".main-content"></div>
-
+    
   </div>
-  <!-- section-inner -->
 </div>
-<!-- main-content -->

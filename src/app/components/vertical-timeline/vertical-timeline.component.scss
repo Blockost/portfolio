@@ -133,7 +133,7 @@ $stem-default-glow: white;
   height: $stem-width;
   margin: 0px auto;
   cursor: pointer;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/scroll-to-top-icon.png);
+  background-image: url('../../../assets/img/scroll-to-top-icon.png');
 }
 
 /*==========  Post wrapper ==========*/
@@ -217,7 +217,7 @@ $stem-default-glow: white;
         left: 0px;
         right: 0px;
         background: transparent
-          url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/stem-mask.png)
+          url('../../../assets/img/stem-mask.png')
           repeat-y top center;
       }
     }
