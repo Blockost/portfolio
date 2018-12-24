@@ -7,16 +7,16 @@
     "ng": "ng",
     "config:dev": "ts-node ./src/set-env.ts --env=dev",
     "config:prod": "ts-node ./src/set-env.ts --env=prod",
-    "postinstall": "npm run config:prod && ng build --env=prod --prod",
     "start": "npm run config:dev && ng serve --env=dev",
     "reinstall": "rm -rf ./node_modules/ && npm install",
     "build": "ng build",
+    "build:prod": "npm run config:prod && ng build --env=prod --prod",
     "test": "npm run lint",
     "lint": "ng lint --format stylish",
     "e2e": "ng e2e"
   },
   "engines": {
-    "node": "8.9.1"
+    "node": "10.10.0"
   },
   "private": true,
   "dependencies": {

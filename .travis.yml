@@ -3,10 +3,9 @@ node_js:
   - 'lts/*' # Latest LTS version of NodeJs
 install:
   - npm install
-scripts: # test build (Continuous Integration)
-  echo "npm test temporarily disabled"
-  #- npm run build
-  #- npm run test
+script:
+  - npm run build:prod
+  - npm run test
 cache: # Retrieve modules from cache and update when something changes
   directories:
     - 'node_modules'
