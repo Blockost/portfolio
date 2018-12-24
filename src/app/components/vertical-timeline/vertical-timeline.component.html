@@ -1,0 +1,37 @@
+<div class="stem-wrapper">
+  <div class="stem"></div>
+  <div class="stem-background"></div>
+</div>
+
+<div class="main-content">
+  <div class="section-inner">
+
+    <div class="stem-padding"></div>
+
+    <div class="post-wrapper">
+
+      <article *ngFor="let event of timelineEvents" class="post" [ngClass]="event.type === 'Education' ? 'university-icon' : 'suitcase-icon'"
+        data-stem-color="yellow">
+        <div class="stem-overlay">
+          <div class="icon"></div>
+          <div class="stem-mask"></div>
+        </div>
+
+        <!-- TODO: 2018-12-24 Blockost -->
+        <!-- Make timeline item looks more like cards -->
+        <div class="post-content">
+          <h2 class="post-title">{{event.title}} - {{event.schoolOrCompany}}</h2>
+          <h6>{{event.from}} - {{event.to}} ({{event.location}})</h6>
+          <div class="entry-content">
+            <ul>
+              <li *ngFor="let item of event.description">{{item}}</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <div class="single-stem-icon" appScrollTo targetElement=".main-content"></div>
+    
+  </div>
+</div>

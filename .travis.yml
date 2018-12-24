@@ -1,17 +1,15 @@
 language: node_js
 node_js:
-  - "lts/*" # Latest LTS version of NodeJs
-email: true # if set to `false`: no email notifications
+  - 'lts/*' # Latest LTS version of NodeJs
 install:
   - npm install
-scripts: # test build (Continuous Integration)
-  echo "npm test temporarily disabled"
-  #- npm run build
-  #- npm run test
+script:
+  - npm run build:prod
+  - npm run test
 cache: # Retrieve modules from cache and update when something changes
   directories:
-    - "node_modules"
-#deploy: # deploy to providers (Continuous Deployment)
-#  provider: heroku
-#  api_key: 
-#    secure: 
+    - 'node_modules'
+notifications:
+  email:
+    on_success: always
+    on_failure: always

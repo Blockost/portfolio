@@ -24,7 +24,7 @@
     <div class="container">
       <div class="owner">
         <div class="avatar">
-          <!-- TODO: 2018-07-01 Add logo --> 
+          <!-- TODO: 2018-07-01 Add logo -->
           <img src="/assets/img/faces/simon_espigole.jpg" class="img-circle img-no-padding img-responsive" alt="Simon Espigolé">
         </div>
         <div class="name">
@@ -61,29 +61,13 @@
     </div>
   </div>
   <div class="main">
-    <div class="section section-dark">
-      <div class="container">
-        <div class="row example-page">
-          <div class="col-md-6 text-center" routerLinkActive="active">
-            <a [routerLink]="['/landing']">
-              <img src="../../assets/img/examples/landing-page.JPG" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%">
-              <a [routerLink]="['/landing']" class="btn btn-outline-neutral btn-round">Landing Page</a>
-            </a>
-          </div>
-
-          <div class="col-md-6 text-center" routerLinkActive="active">
-            <a [routerLink]="['/user-profile']">
-              <img src="../../assets/img/examples/profile-page.JPG" alt="Rounded Image" class="img-rounded img-responsive" style="width: 100%">
-              <a [routerLink]="['/user-profile']" class="btn btn-outline-neutral btn-round">Profile Page</a>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="section-teal-dark">
+      <app-vertical-timeline></app-vertical-timeline>
     </div>
-    <div class="section">
-      <div class="container text-center">
-        <app-contact-form></app-contact-form>
-      </div>
+  </div>
+  <div class="section">
+    <div class="container text-center">
+      <app-contact-form></app-contact-form>
     </div>
   </div>
 </div>

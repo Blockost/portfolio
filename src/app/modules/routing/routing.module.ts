@@ -1,30 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Route, RouterModule } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
 // Import components
+import { VerticalTimelineComponent } from '../../components/vertical-timeline/vertical-timeline.component';
 import { HomeComponent } from '../../pages/home/home.component';
-import { LandingComponent } from '../../pages/landing/landing.component';
 import { PageNotFoundComponent } from '../../pages/page-not-found/page-not-found.component';
 import { ProjectsComponent } from '../../pages/projects/projects.component';
-import { ProfileComponent } from '../../profile/profile.component';
 
 // Add routes to components here (order matters) !
 const ROUTES = [
+  {
+    path: 'timeline',
+    component: VerticalTimelineComponent
+  },
   {
     path: 'home',
     component: HomeComponent
   },
   {
-    path: 'landing',
-    component: LandingComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
     path: 'projects',
-    component: ProjectsComponent,
+    component: ProjectsComponent
   },
   {
     path: '404',
@@ -42,10 +36,8 @@ const ROUTES = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(ROUTES)
-  ],
+  imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule],
   declarations: []
 })
-export class RoutingModule { }
+export class RoutingModule {}
