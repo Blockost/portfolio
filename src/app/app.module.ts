@@ -3,19 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-// Custom modules
-import { RoutingModule } from './modules/routing/routing.module';
-
+//
 // Custom components
 import { AppComponent } from './app.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { FeaturedProjectsComponent } from './components/featured-projects/featured-projects.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProjectListComponent } from './components/project-list/project-list.component';
 import { VerticalTimelineComponent } from './components/vertical-timeline/vertical-timeline.component';
 import { OnScrollTransparencyDirective } from './directives/onScrollTransparency/on-scroll-transparency.directive';
 import { ScrollToDirective } from './directives/scroll-to/scroll-to.directive';
+import { RoutingModule } from './modules/routing/routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
@@ -36,7 +35,8 @@ import { UrlBuilderService } from './services/url-builder/url-builder.service';
     ProjectsComponent,
     ContactFormComponent,
     VerticalTimelineComponent,
-    ScrollToDirective
+    ScrollToDirective,
+    FeaturedProjectsComponent
   ],
   imports: [
     BrowserModule,
