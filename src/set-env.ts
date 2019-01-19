@@ -2,6 +2,16 @@ import * as dotenv from 'dotenv';
 import { existsSync, writeFile } from 'fs';
 import { argv } from 'yargs';
 
+const getEnv = (key: string): string => {
+  console.log(`Retrieving ${key} environment variable`);
+  const env = process.env[key];
+  if (env === undefined) {
+    throw new Error(`Could not retrieve ${key} environment variable`);
+  }
+
+  return env;
+};
+
 // Path to .env file (local only, not committed) containing environment variables
 const envPath = 'src/environments/.env';
 
@@ -25,11 +35,12 @@ if (argv.env === undefined) {
 // upgraded to Angular 6. Don't forget to edit package.json!
 const environment = argv.env;
 const isProd = environment === 'prod';
+const GITHUB_READ_TOKEN = getEnv('GITHUB_READ_TOKEN');
 
 const configFile = `./src/environments/environment.${environment}.ts`;
 const configContent = `export const environment = {
     production: ${isProd},
-    github_read_token: '${process.env.GITHUB_READ_TOKEN}'
+    github_read_token: '${GITHUB_READ_TOKEN}'
 };\n`;
 
 writeFile(configFile, configContent, (err: any) => {
