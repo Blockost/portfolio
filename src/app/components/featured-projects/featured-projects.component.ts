@@ -12,8 +12,8 @@ export class FeaturedProjectsComponent implements OnInit {
       description:
         "Simple sound spectrum visualizer using Three.js. Note: there's a pretty cool music playing!",
       img: '/assets/img/featured-projects/sudoku-game.png',
-      url: 'https://sudoku.blockost.com',
-      repoUrl: 'https://github.com/Blockost/AudioVisualization'
+      url: 'https://audio-visualization.blockost.com/',
+      repoUrl: 'https://github.com/Blockost/audio-visualization'
     },
     {
       name: 'Sudoku Game',
@@ -28,7 +28,7 @@ export class FeaturedProjectsComponent implements OnInit {
       description:
         'Shorten long, unfriendly links in a matter of seconds using this simple link management platform.',
       img: '/assets/img/featured-projects/url-shortener.png',
-      url: 'https://sudoku.blockost.com',
+      url: undefined,
       repoUrl: 'https://github.com/Blockost/url-shortener'
     }
   ];
