@@ -133,7 +133,7 @@ $stem-default-glow: white;
   height: 95px;
   margin: 0px auto;
   cursor: pointer;
-  background-image: url('../../../assets/img/icons/arrow.png');
+  background-image: url('../../../assets/img/vertical-timeline/arrow.png');
   background-size: contain;
 }
 
@@ -182,19 +182,19 @@ $stem-default-glow: white;
     }
 
     &.university-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/icons/university.png');
+      background-image: url('../../../assets/img/vertical-timeline/university.png');
       background-size: $icon-size;
     }
     &.graduation-cap-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/icons/graduation-cap.png');
+      background-image: url('../../../assets/img/vertical-timeline/graduation-cap.png');
       background-size: $icon-size;
     }
     &.suitcase-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/icons/suitcase.png');
+      background-image: url('../../../assets/img/vertical-timeline/suitcase.png');
       background-size: $icon-size;
     }
     &.certificate-icon .stem-overlay .icon {
-      background-image: url('../../../assets/img/icons/certificate.png');
+      background-image: url('../../../assets/img/vertical-timeline/certificate.png');
       background-size: $icon-size;
     }
 
@@ -217,8 +217,9 @@ $stem-default-glow: white;
         bottom: 0px;
         left: 0px;
         right: 0px;
-        background: transparent url('../../../assets/img/stem-mask.png')
-          repeat-y top center;
+        background: transparent
+          url('../../../assets/img/vertical-timeline/stem-mask.png') repeat-y
+          top center;
       }
     }
 
