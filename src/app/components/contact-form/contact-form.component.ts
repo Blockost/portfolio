@@ -11,6 +11,7 @@ export class ContactFormComponent implements OnInit {
     '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$'
   );
 
+  // TODO: 2019-04-16 Blockost Use Angular react forms + use built-in validators
   @ViewChild('emailAddress') private emailAddressEl!: ElementRef;
   @ViewChild('message') private messageEl!: ElementRef;
 
@@ -47,8 +48,8 @@ export class ContactFormComponent implements OnInit {
 
   sendMessage() {
     if (this.validateEmailAddress() && this.validateMessage()) {
-      // TODO: 2018-07-01 Create email service and send email here
-      // with given email address and message
+      // TODO: 2018-07-01 Blockost Create email service and send email here with given email
+      // address and message
       throw new Error('Not implemented yet');
     }
   }

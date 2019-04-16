@@ -41,10 +41,13 @@ $cards-per-line: (
   margin-bottom: 5rem;
 }
 
-.card-header {
-  // Removing bootstrap ugly css :)
-  background-color: white;
+.card > * {
+  // Clearing bootstrap ugly css :)
+  background: #ffffff;
   border-bottom: 0px;
+}
+
+.card-header {
   display: flex;
   justify-content: space-between;
 }
@@ -53,6 +56,8 @@ $cards-per-line: (
   display: flex;
   flex: 1 0 auto;
   margin-right: 1rem;
+  // Removing Boostrap's margin bottom
+  margin-bottom: 0 !important;
 }
 
 .custom-card-language-container {
@@ -64,6 +69,9 @@ $cards-per-line: (
 }
 
 .custom-card-language {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -71,7 +79,7 @@ $cards-per-line: (
 
 [class*='-color'] {
   width: 100%;
-  height: 10px;
+  height: 35%;
   transition-property: height;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -79,7 +87,6 @@ $cards-per-line: (
 
 .custom-card-language:hover {
   [class*='-color'] {
-    width: 100%;
     height: 100%;
   }
 }
@@ -92,14 +99,6 @@ $cards-per-line: (
   width: 100%;
   height: 20vw;
   object-fit: cover;
-}
-
-.card-body {
-  background: white;
-}
-
-.card-footer {
-  background: white;
 }
 
 .custom-card-actions {
