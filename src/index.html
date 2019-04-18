@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138615690-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'UA-138615690-1');
+    // XXX: 2019-04-18 Blockost No gtag('config', GA_ID) here to prevent firing two events
+    // on page load (event are fired on route change)
   </script>
-  
+
   <meta charset="utf-8">
   <title>Blockost's Portfolio</title>
   <base href="/">
@@ -21,12 +23,13 @@
   <!--     Fonts and icons     -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  
-  
+
 </head>
+
 <body>
   <app-root>
-    <!-- other angular components go here --> 
+    <!-- other angular components go here -->
   </app-root>
 </body>
+
 </html>
