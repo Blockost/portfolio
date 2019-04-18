@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "server.js",
   "scripts": {
@@ -14,9 +14,6 @@
     "test": "npm run lint",
     "lint": "ng lint --format stylish",
     "e2e": "ng e2e"
-  },
-  "engines": {
-    "node": "10.10.0"
   },
   "private": true,
   "dependencies": {
@@ -44,7 +41,8 @@
     "ts-node": "~3.2.0",
     "typescript": "^2.8.4",
     "yargs": "^10.0.3",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "tslint": "~5.7.0"
   },
   "devDependencies": {
     "@angular/language-service": "^5.0.0",
@@ -60,7 +58,6 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "^5.4.1",
-    "tslint": "~5.7.0"
+    "protractor": "^5.4.1"
   }
 }
