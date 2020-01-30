@@ -2,28 +2,30 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2" ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner" role="listbox">
       <ng-container *ngFor="let project of projects; let i = index;">
         <div class="carousel-item" [class.active]="i === 0">
           <!-- TODO: 2019-01-20 Blockost -->
           <!-- Use project.img url instead of the backgroup url -->
-          <div class="page-header" style="background-image: url('/assets/img/featured-projects/placeholder.jpg');">
+          <div class="page-header" [style.backgroundImage]="'url('+project.img+')'">
             <div class="filter-gradient"></div>
             <div class="content-center above-all">
               <div class="container">
-                <div class="row"> 
+                <div class="row">
                   <div class="col-md-8 text-left mr-auto ml-auto">
                     <h1 class="title">{{project.name}}</h1>
                     <h5 class="description">{{project.description}}</h5>
                     <br>
                     <div class="buttons">
-                      <a [href]="project.url" class="btn btn-danger btn-round btn-lg" [class.disabled]="!project.url" target="_blank">
+                      <a [href]="project.url" class="btn btn-danger btn-round btn-lg" [class.disabled]="!project.url"
+                        target="_blank">
                         <i class="fa fa-desktop"></i> Live Demo
                       </a>
-                      <a [href]="project.repoUrl" class="btn btn-outline-neutral btn-round btn-lg" target="_blank">
+                      <a [href]="project.repoUrl" class="btn btn-outline-neutral btn-round btn-lg"
+                        [class.disabled]="!project.repoUrl" target="_blank">
                         <i class="fa fa-github"></i> View on GitHub
                       </a>
                     </div>
@@ -35,11 +37,13 @@
         </div>
       </ng-container>
     </div>
-    <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button"
+      data-slide="prev">
       <span class="fa fa-angle-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="right carousel-control carousel-control-next" href="#carouselExampleIndicators" role="button"
+      data-slide="next">
       <span class="fa fa-angle-right"></span>
       <span class="sr-only">Next</span>
     </a>

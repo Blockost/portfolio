@@ -8,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class FeaturedProjectsComponent implements OnInit {
   projects = [
     {
+      name: 'GIM: Gestion Informatisée de la Maintenance',
+      description:
+        'Computerized maintenance management system for small companies and government agencies. Written in french 🇫🇷',
+      img: '/assets/img/featured-projects/gim.png',
+      url: 'https://gim.blockost.com',
+      repoUrl: undefined
+    },
+    {
       name: 'Audio Visualization',
       description:
         "Simple sound spectrum visualizer using Three.js. Note: there's a pretty cool music playing!",
-      img: '/assets/img/featured-projects/sudoku-game.png',
+      img: '/assets/img/featured-projects/audio-visualization.jpeg',
       url: 'https://audio-visualization.blockost.com/',
       repoUrl: 'https://github.com/Blockost/audio-visualization'
     },

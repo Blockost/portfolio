@@ -60,12 +60,60 @@ export class VerticalTimelineComponent implements OnInit {
         ]
       ),
       new ExperienceTimelineEvent(
-        'IT Consultant',
-        'Amaris',
+        'Software Engineer (back-end)',
+        'Zimmer Biomet',
         'Montréal, Canada',
-        '2017',
-        'Present',
-        ['Zimmer Biomet']
+        'November 2017',
+        'February 2019',
+        [
+          'Developed and maintained a series of REST and SOAP web services to support the manufacturing of Zimmer Biomet bone implants and cut guides',
+          'Java, Spring, Hibernate, Atomikos, SQL Server, Graylog'
+        ]
+      ),
+      new ExperienceTimelineEvent(
+        'Software Engineer (fullstack)',
+        'Mantu',
+        'Montréal, Canada',
+        'March 2019',
+        'March 2019',
+        [
+          'Designed and implemented the Amaris Welcome Application for their office in Montréal',
+          'Cross-platoform iOS/Android development with React Native and Expo',
+          'Node.js, React Native, Typescript, Javascript'
+        ]
+      ),
+      new ExperienceTimelineEvent(
+        'Software Engineer (fullstack)',
+        'Amaris Foundation',
+        'Montréal, Canada',
+        'April 2019',
+        'April 2019',
+        [
+          'Designed and implemented a brand new web application that helps bring volunteers and charitable organizations together',
+          'Node.js, Vue.js, Vuetify'
+        ]
+      ),
+      new ExperienceTimelineEvent(
+        'Software Engineer (fullstack)',
+        'Morgan Stanley',
+        'Montréal, Canada',
+        'May 2019',
+        'October 2019',
+        [
+          'Risk Aggregation department',
+          'In charge of developing a series of web applications and tools for reviewing and rating/ranking risk models.',
+          'Java, Spring, Angular, Typescript, Javascript'
+        ]
+      ),
+      new ExperienceTimelineEvent(
+        'Freelance Software Engineer',
+        'Llyoka',
+        'Worldwide',
+        'January 2019',
+        'Now',
+        [
+          'Freelance software engineer, open to new opportunities. Feel free to contact me!'
+        ]
       )
     ];
   }
