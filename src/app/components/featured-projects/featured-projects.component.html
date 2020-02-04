@@ -8,8 +8,6 @@
     <div class="carousel-inner" role="listbox">
       <ng-container *ngFor="let project of projects; let i = index;">
         <div class="carousel-item" [class.active]="i === 0">
-          <!-- TODO: 2019-01-20 Blockost -->
-          <!-- Use project.img url instead of the backgroup url -->
           <div class="page-header" [style.backgroundImage]="'url('+project.img+')'">
             <div class="filter-gradient"></div>
             <div class="content-center above-all">
