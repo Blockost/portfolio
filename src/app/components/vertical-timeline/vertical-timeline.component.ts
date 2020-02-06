@@ -66,7 +66,8 @@ export class VerticalTimelineComponent implements OnInit {
         'November 2017',
         'February 2019',
         [
-          'Developed and maintained a series of REST and SOAP web services to support the manufacturing of Zimmer Biomet bone implants and cut guides',
+          `Developed and maintained a series of REST and SOAP web services to support the
+          manufacturing of Zimmer Biomet bone implants and cut guides`,
           'Java, Spring, Hibernate, Atomikos, SQL Server, Graylog'
         ]
       ),
