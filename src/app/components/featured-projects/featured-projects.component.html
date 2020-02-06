@@ -2,7 +2,7 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <ng-container *ngFor="let project of projects; let i = index;">
-        <li data-target="#carouselExampleIndicators" data-slide-to="i" [class.active]="i === 0"></li>
+        <li data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" [class.active]="i === 0"></li>
       </ng-container>
     </ol>
     <div class="carousel-inner" role="listbox">
